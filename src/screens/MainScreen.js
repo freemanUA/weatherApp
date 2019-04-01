@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { RefreshControl, StyleSheet } from 'react-native';
-import { Container, Content, Header, Title, Body, View, Text } from 'native-base';
+import { Container, Content, Header, Title, Body, View, Text, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import { getWeatherData } from '../actions/dataActions';
 import { toastr } from '../helpers/toastHelper';
@@ -23,6 +23,9 @@ class MainScreen extends Component {
     }
 
     render() {
+        // if (this.props.loading) {
+        //     return <Spinner />;
+        // }
         const { main } = this.props.weatherData;
         if (main === undefined) {
             return (
